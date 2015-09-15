@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @shareholder.name %>
+</p>
+
+<p>
+  <strong>Trustee:</strong>
+  <%= @shareholder.trustee_id %>
+</p>
+
+<%= link_to 'Edit', edit_shareholder_path(@shareholder) %> |
+<%= link_to 'Back', shareholders_path %>

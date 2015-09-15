@@ -1,0 +1,21 @@
+<%= form_for(@company_shareholder) do |f| %>
+  <% if @company_shareholder.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@company_shareholder.errors.count, "error") %> prohibited this company_shareholder from being saved:</h2>
+
+      <ul>
+      <% @company_shareholder.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :hrm_number %><br>
+    <%= f.number_field :hrm_number %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

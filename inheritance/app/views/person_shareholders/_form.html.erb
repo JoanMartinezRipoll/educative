@@ -1,0 +1,25 @@
+<%= form_for(@person_shareholder) do |f| %>
+  <% if @person_shareholder.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@person_shareholder.errors.count, "error") %> prohibited this person_shareholder from being saved:</h2>
+
+      <ul>
+      <% @person_shareholder.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :last_name %><br>
+    <%= f.text_field :last_name %>
+  </div>
+  <div class="field">
+    <%= f.label :birthdate %><br>
+    <%= f.date_select :birthdate %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

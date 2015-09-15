@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @person_shareholder.last_name %>
+</p>
+
+<p>
+  <strong>Birthdate:</strong>
+  <%= @person_shareholder.birthdate %>
+</p>
+
+<%= link_to 'Edit', edit_person_shareholder_path(@person_shareholder) %> |
+<%= link_to 'Back', person_shareholders_path %>

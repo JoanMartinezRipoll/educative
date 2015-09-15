@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Company Shareholders</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Hrm number</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @company_shareholders.each do |company_shareholder| %>
+      <tr>
+        <td><%= company_shareholder.hrm_number %></td>
+        <td><%= link_to 'Show', company_shareholder %></td>
+        <td><%= link_to 'Edit', edit_company_shareholder_path(company_shareholder) %></td>
+        <td><%= link_to 'Destroy', company_shareholder, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Company shareholder', new_company_shareholder_path %>

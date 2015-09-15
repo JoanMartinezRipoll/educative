@@ -1,0 +1,21 @@
+<%= form_for(@mamal) do |f| %>
+  <% if @mamal.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@mamal.errors.count, "error") %> prohibited this mamal from being saved:</h2>
+
+      <ul>
+      <% @mamal.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :pregnancy_time %><br>
+    <%= f.number_field :pregnancy_time %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

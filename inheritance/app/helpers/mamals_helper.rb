@@ -1,0 +1,2 @@
+module MamalsHelper
+end
