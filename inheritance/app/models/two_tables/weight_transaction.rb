@@ -1,0 +1,2 @@
+class WeightTransaction < Transaction
+end

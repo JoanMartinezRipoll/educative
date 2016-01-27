@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :weight_transactions
+  resources :color_transactions
+  resources :bankers
   resources :birds
   resources :mamals
   resources :animals

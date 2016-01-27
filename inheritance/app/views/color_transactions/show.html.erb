@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Iban:</strong>
+  <%= @color_transaction.iban %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @color_transaction.color %>
+</p>
+
+<p>
+  <strong>Banker:</strong>
+  <%= @color_transaction.banker %>
+</p>
+
+<%= link_to 'Edit', edit_color_transaction_path(@color_transaction) %> |
+<%= link_to 'Back', color_transactions_path %>

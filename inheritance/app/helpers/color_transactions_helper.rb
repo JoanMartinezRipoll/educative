@@ -1,0 +1,2 @@
+module ColorTransactionsHelper
+end

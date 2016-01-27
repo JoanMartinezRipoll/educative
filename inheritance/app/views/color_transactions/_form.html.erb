@@ -1,0 +1,29 @@
+<%= form_for(@color_transaction) do |f| %>
+  <% if @color_transaction.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@color_transaction.errors.count, "error") %> prohibited this color_transaction from being saved:</h2>
+
+      <ul>
+      <% @color_transaction.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :iban %><br>
+    <%= f.text_field :iban %>
+  </div>
+  <div class="field">
+    <%= f.label :color %><br>
+    <%= f.text_field :color %>
+  </div>
+  <div class="field">
+    <%= f.label :banker_id %><br>
+    <%= f.text_field :banker_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

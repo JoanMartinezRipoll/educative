@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  iban: MyString
+  color: MyString
+  banker_id: 
+
+two:
+  iban: MyString
+  color: MyString
+  banker_id: 

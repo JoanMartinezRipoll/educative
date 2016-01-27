@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Weight Transactions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Iban</th>
+      <th>Weight</th>
+      <th>Banker</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @weight_transactions.each do |weight_transaction| %>
+      <tr>
+        <td><%= weight_transaction.iban %></td>
+        <td><%= weight_transaction.weight %></td>
+        <td><%= weight_transaction.banker %></td>
+        <td><%= link_to 'Show', weight_transaction %></td>
+        <td><%= link_to 'Edit', edit_weight_transaction_path(weight_transaction) %></td>
+        <td><%= link_to 'Destroy', weight_transaction, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Weight transaction', new_weight_transaction_path %>

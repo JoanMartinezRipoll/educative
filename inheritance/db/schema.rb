@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150914161646) do
+ActiveRecord::Schema.define(version: 20160127103335) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,11 +25,27 @@ ActiveRecord::Schema.define(version: 20150914161646) do
     t.datetime "updated_at",   null: false
   end
 
+  create_table "bankers", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "birds", force: :cascade do |t|
     t.integer  "eggs"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "color_transactions", force: :cascade do |t|
+    t.string   "iban"
+    t.string   "color"
+    t.integer  "banker_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "color_transactions", ["banker_id"], name: "index_color_transactions_on_banker_id", using: :btree
 
   create_table "company_shareholders", force: :cascade do |t|
     t.integer  "hrm_number"
@@ -81,4 +97,16 @@ ActiveRecord::Schema.define(version: 20150914161646) do
 
   add_index "vehicles", ["person_id"], name: "index_vehicles_on_person_id", using: :btree
 
+  create_table "weight_transactions", force: :cascade do |t|
+    t.string   "iban"
+    t.integer  "weight"
+    t.integer  "banker_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "weight_transactions", ["banker_id"], name: "index_weight_transactions_on_banker_id", using: :btree
+
+  add_foreign_key "color_transactions", "bankers"
+  add_foreign_key "weight_transactions", "bankers"
 end

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Iban:</strong>
+  <%= @weight_transaction.iban %>
+</p>
+
+<p>
+  <strong>Weight:</strong>
+  <%= @weight_transaction.weight %>
+</p>
+
+<p>
+  <strong>Banker:</strong>
+  <%= @weight_transaction.banker %>
+</p>
+
+<%= link_to 'Edit', edit_weight_transaction_path(@weight_transaction) %> |
+<%= link_to 'Back', weight_transactions_path %>

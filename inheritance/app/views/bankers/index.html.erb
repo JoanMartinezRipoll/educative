@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Bankers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bankers.each do |banker| %>
+      <tr>
+        <td><%= banker.name %></td>
+        <td><%= link_to 'Show', banker %></td>
+        <td><%= link_to 'Edit', edit_banker_path(banker) %></td>
+        <td><%= link_to 'Destroy', banker, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Banker', new_banker_path %>
